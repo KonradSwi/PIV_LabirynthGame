@@ -1,0 +1,43 @@
+﻿<Window x:Class="LabyrinthGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Labyrinth Game" Height="600" Width="650"
+        KeyDown="Window_KeyDown"
+        SizeChanged="Window_SizeChanged">
+
+    <Grid>
+        <!-- Canvas to draw the maze -->
+        <Canvas Name="mazeCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+        <!-- Button to reset the game -->
+        <Button Name="ResetButton" Content="Reset" Width="100" Height="30"
+                VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,10,10,0"
+                Click="ResetButton_Click" />
+
+        <TextBlock Text="Select Difficulty:" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,90,10,0" Foreground="Blue" />
+        <!-- ComboBox to select difficulty level -->
+        <ComboBox Name="DifficultyComboBox" Width="100" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,110,10,0" SelectionChanged="DifficultyComboBox_SelectionChanged">
+            <ComboBoxItem Content="Slow" />
+            <ComboBoxItem Content="Medium" />
+            <ComboBoxItem Content="Fast" />
+            <ComboBoxItem Content="Asian" />
+        </ComboBox>
+
+        <TextBlock Text="Select Map Size:" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,40,10,0" Foreground="Blue" />
+        <!-- ComboBox to select map size -->
+        <ComboBox Name="MapSizeComboBox" Width="100" Height="30" 
+          VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,60,10,0" 
+          SelectionChanged="MapSizeComboBox_SelectionChanged">
+            <ComboBoxItem Content="Small" />
+            <ComboBoxItem Content="Medium" />
+            <ComboBoxItem Content="Large" />
+        </ComboBox>
+
+        <!-- Score Display -->
+        <TextBlock Name="ScoreTextBlock" Text="Score: 0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,140,40,0" FontSize="16" Foreground="Blue" />
+
+    </Grid>
+</Window>
